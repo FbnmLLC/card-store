@@ -16,7 +16,7 @@ class _123pay extends Payment {
 	public function request( $id, $au, $price, $module, $product ) {
 		$merchant_id  = $module['merchant_id']['value'];
 		$amount       = $this->getRial( $price );
-		$callback_url = $this->getCallbackUrl( $au );
+		$callback_url = urlencode( $this->getCallbackUrl( $au ) );
 		$ch           = curl_init();
 		curl_setopt( $ch, CURLOPT_URL, 'https://123pay.ir/api/v1/create/payment' );
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, "merchant_id=$merchant_id&amount=$amount&callback_url=$callback_url" );
