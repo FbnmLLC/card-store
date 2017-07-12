@@ -12,7 +12,7 @@ use framework\request\Request;
  * @package    payment module
  * @copyright    GPLv3
  */
-class _123pay extends Payment {
+class ir123pay extends Payment {
 	public function request( $id, $au, $price, $module, $product ) {
 		$merchant_id  = $module['merchant_id']['value'];
 		$amount       = $this->getRial( $price );
@@ -70,7 +70,7 @@ class _123pay extends Payment {
 	public function fields() {
 		return array(
 			'merchant_id' => array(
-				'label' => $this->lang()->getIndex( '_123pay', 'merchant_id' ),
+				'label' => $this->lang()->getIndex( 'ir123pay', 'merchant_id' ),
 				'value' => '',
 			)
 		);
